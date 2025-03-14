@@ -1,12 +1,13 @@
 #include <stdio.h>
 
-#include "askname.h"
-
-int main(int argc, char **argv)
-{
+int main() {
     char first[255], last[255];
 
-    askname(first, last);
+    printf("Введите ваше имя: ");
+    scanf("%254s", first); // %254s для предотвращения переполнения буфера
+
+    printf("Введите вашу фамилию: ");
+    scanf("%254s", last); // %254s для предотвращения переполнения буфера
 
     printf("Hello, %s %s!\n", first, last);
     return 0;
